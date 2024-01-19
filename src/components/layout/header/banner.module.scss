@@ -1,0 +1,24 @@
+@import "../../../styles/base/mixins.scss";
+
+
+
+.banner-wrap {
+  padding: 16px 24px;
+  background-color: #23856D;
+  color: #fff;
+  @include flex-container(row, space-between, center);
+  & div:nth-child(1) {
+    & div:nth-child(2) {
+      margin-left: 4rem;
+    }
+    @include flex-container(row, space-between, center);
+  }
+
+  & div:nth-child(3) {
+    @include flex-container(row, space-between, center);
+  }
+}
+
+.socials {
+  @include flex-container();
+}

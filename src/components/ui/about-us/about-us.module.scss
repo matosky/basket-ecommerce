@@ -1,0 +1,7 @@
+@import '../../../styles/base/mixins.scss';
+
+.about-wrap{
+    border: 2px solid red;
+   width: 80%;
+   @include flex-container(flex-start, center, center)
+}

@@ -1,0 +1,69 @@
+// hero.module.scss
+@import "../../../styles/base/mixins.scss";
+
+.hero-container {
+  width: 100%;
+  height: 80vh;
+  @include flex-container(row, center, center);
+}
+
+.hero-content {
+  width: 65%;
+  height: 70%;
+  @include flex-container(row, flex-start, flex-start);
+  padding: 1rem;
+  gap: 1rem;
+  @media screen and (max-width: 1100px) {
+    @include flex-container(column, flex-start, flex-start);
+  }
+}
+
+.box1 {
+  flex: 1;
+  height: 100%;
+  border: 1px solid salmon;
+  @media screen and (max-width: 1100px) {
+    flex-grow: 1;
+  }
+}
+
+.box2 {
+  flex: 2;
+  height: 100%;
+  border: 1px solid yellow;
+  @include flex-container(column, flex-start, flex-start);
+  @media screen and (max-width: 1100px) {
+    flex: 1;
+    gap: 1rem;
+    flex-grow: 1;
+  }
+
+  .inner-top {
+    flex: 1;
+    width: 100%;
+    height: 50%;
+    border: 1px solid black;
+  }
+  .inner-bottom {
+    flex: 1;
+    width: 100%;
+    height: 50%;
+    border: 1px solid black;
+    @include flex-container(row, flex-start, flex-start);
+    @media screen and (max-width: 1100px) {
+      @include flex-container(column, flex-start, flex-start);
+      gap: 1rem;
+    }
+    .box3 {
+      flex: 1;
+      height: 100%;
+      border: 1px solid black;
+    }
+
+    .box4 {
+      flex: 1;
+      height: 100%;
+      border: 1px solid black;
+    }
+  }
+}

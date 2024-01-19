@@ -1,0 +1,12 @@
+@import '../../../styles/base/mixins.scss';
+
+
+.best-seller-wrap{
+    width: 100%;
+    @include flex-container(column, center, center);
+    padding:4rem 6rem;
+}
+
+.button{
+    margin-top: 2rem;
+}

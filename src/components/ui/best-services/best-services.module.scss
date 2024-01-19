@@ -1,0 +1,8 @@
+
+@import '../../../styles/base/mixins.scss';
+
+
+.best-services-wrap{
+    width: 100%;
+    @include flex-container(column, center, center)
+}

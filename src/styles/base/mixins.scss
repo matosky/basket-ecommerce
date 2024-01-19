@@ -1,0 +1,27 @@
+@mixin flex-container($direction: row, $justify-content: flex-start, $align-items: stretch) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin responsive-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+@mixin button-styles($background-color: #3498db, $text-color: #ffffff) {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: $background-color;
+    color: $text-color;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: darken($background-color, 10%);
+    }
+}

@@ -1,0 +1,8 @@
+@import '../../../styles/base/mixins.scss';
+
+
+.featured-wrap{
+    width: 100%;
+    @include flex-container(column, center, center)
+}
+

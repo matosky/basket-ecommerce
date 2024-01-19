@@ -1,0 +1,30 @@
+@import '../../../styles/base/mixins.scss';
+
+.header-wrap{
+}
+
+.menu{
+    padding: 16px 24px;
+    background-color: #FFFFFF;
+    @include flex-container(row, space-between, center);
+}
+
+.left{
+    .logo{
+        font-size: 24px;
+        font-weight: 700;
+    }
+    @include flex-container(row, space-between, center);
+    .links{
+        margin-left: 10rem;
+        @include flex-container(row, space-between, center);
+    }
+}
+
+
+.right{
+    @include flex-container(row, space-between, center);
+    & div:nth-child(3){
+        @include flex-container(row, space-between, center)
+     }
+}
