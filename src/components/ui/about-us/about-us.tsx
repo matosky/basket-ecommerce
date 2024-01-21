@@ -22,7 +22,8 @@ const Item = styled(Paper)(({ theme }) => ({
 export const AboutUs = () => {
   return (
     <section className={styles["about-wrap"]}>
-      <div className={styles["testimonial"]}>
+     <div className={styles['container']}>
+     <div className={styles["testimonial"]}>
         <Typography gutterBottom variant="h3">
           What they say about us
         </Typography>
@@ -52,7 +53,7 @@ export const AboutUs = () => {
           Designer
         </Typography>
       </div>
-      <Grid  sx={{ width: "350px", height: "350px",}} container spacing={0}>
+      <Grid className={styles['grid']}   container spacing={0}>
         {galleryData.map((pc, i) => (
           <Grid item xs={4} key={i}>
             <Item sx={{ width: "100%", height: "100%" }}>
@@ -67,6 +68,7 @@ export const AboutUs = () => {
           </Grid>
         ))}
       </Grid>
+     </div>
     </section>
   );
 };

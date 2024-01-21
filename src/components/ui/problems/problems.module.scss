@@ -3,12 +3,12 @@
 .problems-wrap{
     width: 100%;
     max-width: 100%;
-    margin: 40px 0;
+    margin: 50px 0;
     padding: 4rem 0;
     background-image: url('/images/problems/bg.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
     position: relative;
     @include flex-container(row, center, center);
 

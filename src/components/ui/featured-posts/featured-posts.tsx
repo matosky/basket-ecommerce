@@ -43,8 +43,8 @@ export const FeaturedPosts = () => {
                   width={"80%"}
                   display={"flex"}
                   justifyContent={"space-between"}
-                  // alignItems={"center"}
-                  gutterBottom
+                  alignItems={"center"}
+                  padding={'0'}
                   variant="subtitle1"
                   component="div"
                 >
@@ -52,7 +52,7 @@ export const FeaturedPosts = () => {
                   <Link style={{color: "#737373"}} href={"/"}>Trending</Link>
                   <Link style={{color: "#737373"}} href={"/"}>New</Link>
                 </Typography>
-                <Typography width={'100%'} gutterBottom variant="h4" textAlign={'left'} component="h4">
+                <Typography gutterBottom variant="h4" component="h4">
                   {ft.title}
                 </Typography>
                 <Typography variant="body1" component={'p'} color="text.secondary">
