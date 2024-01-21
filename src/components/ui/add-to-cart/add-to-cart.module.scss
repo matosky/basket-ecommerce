@@ -1,7 +1,10 @@
 @import "../../../styles/base/mixins.scss";
 
 .add-to-cart-wrap {
-  width: 100%;
+  position: relative;
+  z-index: 5;
+  width: 100vw !important;
+  max-width: 100%;
   padding: 40px 0;
   background-color: var(--secondary-bg-section);
   & h4 {
@@ -30,6 +33,7 @@
 .custom-grid {
   display: flex;
   padding: 2rem 0;
+
   gap: 20px;
   @media screen and (max-width: 1400px) {
     flex-direction: column;
@@ -57,7 +61,7 @@
 
     .switch-icon1 {
       color: #ffffff;
-      font-size: 4rem;
+      font-size: 3rem;
       position: absolute;
       top: 50%;
       font-weight: 100;
@@ -67,7 +71,7 @@
     }
     .switch-icon2 {
       color: #ffffff;
-      font-size: 4rem;
+      font-size: 3rem;
       position: absolute;
       top: 50%;
       cursor: pointer;
@@ -80,6 +84,9 @@
       display: flex;
       gap: 10px;
       margin-top: 20px;
+  @media screen and (max-width: 1400px) {
+    width: auto;
+  }
 
       & img {
         height: 45px;

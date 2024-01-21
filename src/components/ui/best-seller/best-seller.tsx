@@ -53,18 +53,28 @@ export const BestSeller = ({ children, style }: BestSellerProps) => {
     try {
       const productsData = await getProducts(skip, 8);
       const newProducts = productsData?.products || [];
-      setProducts((prevProducts) => [...prevProducts, ...newProducts]);
-      setSkip((prevSkip) => prevSkip + 8);
+  
+      // Check if there are new products to add
+      if (newProducts.length > 0) {
+        setProducts((prevProducts) => [...prevProducts, ...newProducts]);
+        setSkip((prevSkip) => prevSkip + 8);
+      } else {
+        // No more products to load, hide the button
+        setSkip(0); // Reset skip to prevent unnecessary calls
+      }
     } catch (err) {
       setError("error");
     } finally {
       setLoading(false);
     }
   };
+  
+  
 
   useEffect(() => {
     fetchInitialProducts();
   }, []);
+
   return (
     <section
       className={styles["best-seller-wrap"]}
@@ -76,7 +86,7 @@ export const BestSeller = ({ children, style }: BestSellerProps) => {
         {children}
       </div>
       {products && <ProductList products={products} />}
-      {!asPath.includes("products") && (
+      {!asPath.includes("products") && products.length > 0 && (
         <div className={styles["button"]}>
           <Button
             loading={loading}

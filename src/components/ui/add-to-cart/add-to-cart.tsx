@@ -172,8 +172,8 @@ export const AddToCart = ({ product }: ProductResponse) => {
             </Box>
           </div>
         </div>
-
-        <Snackbar
+      </div>
+      <Snackbar
           open={snackbarOpen}
           autoHideDuration={3000}
           onClose={handleSnackbarClose}
@@ -192,7 +192,6 @@ export const AddToCart = ({ product }: ProductResponse) => {
             }
           />
         </Snackbar>
-      </div>
     </section>
   );
 };
