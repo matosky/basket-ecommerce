@@ -53,9 +53,9 @@ export const AboutUs = () => {
           Designer
         </Typography>
       </div>
-      <Grid className={styles['grid']}   container spacing={0}>
+      <Grid className={styles['grid']} >
         {galleryData.map((pc, i) => (
-          <Grid item xs={4} key={i}>
+          <Grid className={styles['item']}  key={i}>
             <Item sx={{ width: "100%", height: "100%" }}>
               <Image
                 src={pc.img}
