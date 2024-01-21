@@ -6,16 +6,16 @@ export const Problems = () => {
   return (
     <section className={styles["problems-wrap"]}>
       <div className={styles["content-box"]}>
-        <Typography gutterBottom variant="h4" component="div">
+        <Typography  variant="h6" component="h6">
           Designing Better Experience
         </Typography>
-        <Typography gutterBottom variant="h2" component="div">
+        <Typography  variant="h2" component="h2">
           Problems trying to resolve the conflict between
         </Typography>
-        <Typography gutterBottom variant="body1" component="div">
+        <Typography  variant="body1" component="p">
           Problems trying to resolve the conflict between reals of physical
         </Typography>
-        <Typography gutterBottom variant="h4" component="div">
+        <Typography  variant="h3" component="h3">
           $16.48
         </Typography>
         <Button variant="contained" text="ADD YOUR CALL TO ACTION" />

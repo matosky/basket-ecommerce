@@ -1,10 +1,8 @@
 @import "../../../styles/base/mixins.scss";
 
-
-
-.banner-wrap {
-  padding: 16px 24px;
-  background-color: #23856D;
+.home-page-banner-wrap {
+  padding: 1rem 1.6rem;
+  background-color: #23856d;
   color: #fff;
   @include flex-container(row, space-between, center);
   & div:nth-child(1) {
@@ -17,8 +15,161 @@
   & div:nth-child(3) {
     @include flex-container(row, space-between, center);
   }
+
+  @media screen and (max-width: 1410px){
+    display: none;
+  }
+
+  .home-container{
+    width: 1200px;
+    margin: 0 auto;
+    @media screen and (max-width: 1100px){
+      width: 90%;
+    }
+  }
+
+  .home-left {
+    @include flex-container(row, space-between, center);
+    & div {
+      gap: 4px;
+      @include flex-container(row, space-between, center);
+       & span{
+        font-size: 14px;
+        font-weight: 400;
+        color: #FFFFFF;
+        opacity: 0.8;
+       }
+      & img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  
+  @media screen and (max-width: 765px){
+     display: none;
+  }
+  }
+  
+  .home-center {
+    @include flex-container(row, space-between, center);
+    & span{
+      font-size: 14px;
+      font-weight: 700;
+      color: #FFFFFF;
+     }
+  }
+  
+  .home-right {
+    gap: 10px;
+    @include flex-container();
+  
+   & span{
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFFFFF;
+   }
+  
+    .home-socials {
+      gap: 10px;
+      @include flex-container(row, center, center);
+      & span{
+        font-size: 14px;
+        font-weight: 700;
+        color: #FFFFFF;
+       }
+      & img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+  
+  
 }
 
-.socials {
-  @include flex-container();
+
+
+
+
+// ...............product page styles................
+.product-banner-wrap{
+  background-color: #23856d;
+  color: #fff;
+  padding: 1rem 0;
+  @include flex-container(row, space-between, center);
+  & div:nth-child(1) {
+    & div:nth-child(2) {
+      margin-left: 4rem;
+    }
+    @include flex-container(row, space-between, center);
+  }
+
+  & div:nth-child(3) {
+    @include flex-container(row, space-between, center);
+  }
+  @media screen and (max-width: 1100px){
+    display: none;
+  }
+
+
+  .container{
+    width: 850px;
+    margin: 0 auto;
+    @media screen and (max-width: 1100px){
+      width: 90%;
+    }
+  }
+  
+  .left {
+    @include flex-container(row, space-between, center);
+    & div {
+      gap: 4px;
+      @include flex-container(row, space-between, center);
+       & span{
+        font-size: 0.8rem;
+        font-weight: 300;
+        color: #FFFFFF;
+        opacity: 0.8;
+       }
+      & img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  
+  @media screen and (max-width: 765px){
+     display: none;
+  }
+  }
+  
+  .center {
+    @include flex-container(row, space-between, center);
+    & h6{
+      font-size: 12px;
+      font-weight: 300;
+      color: #FFFFFF;
+     }
+  }
+  
+  .right {
+    @include flex-container();
+  
+ 
+  
+    .socials {
+      gap: 10px;
+      @include flex-container(row, center, center);
+      & span{
+        font-size: 14px;
+        font-weight: 700;
+        color: #FFFFFF;
+       }
+      & img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+  
 }
+

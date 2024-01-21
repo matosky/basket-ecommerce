@@ -2,11 +2,16 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import {
+  BestSeller,
   ProductResponse,
 } from "@/components/ui/best-seller/best-seller";
 import { ProductList } from "@/components/common/product-list/product-list";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { getProducts } from "@/network/products";
+import { ProductDescription } from "@/components/ui/product-description/product-description";
+import { AddToCart } from "@/components/ui/add-to-cart/add-to-cart";
+import { BaseLayout } from "@/components/layout/base-layout";
+import { Brands } from "@/components/ui/brands/ brands";
 
 const ItemPage = () => {
   const router = useRouter();
@@ -31,18 +36,26 @@ const ItemPage = () => {
   useEffect(() => {
     fetchInitialProducts();
   }, []);
+
+  // Parse id into a number before using it for comparison
+  const singleProduct = products?.find(
+    (p) => p.id === parseInt(id as string, 10)
+  );
+
   return (
-    <div style={{width:'100%', padding: '4rem 20rem'}}>
-      <div>
-        <Typography
-          fontSize={"1.8rem"}
-          variant="h3"
-          fontWeight={'700'}
-        >
-          BEST SELLER PRODUCTS
-        </Typography>
-      </div>
-      {products && <ProductList products={products} />}
+    <div>
+      {singleProduct && <AddToCart product={singleProduct} />}
+      <ProductDescription />
+      <BestSeller
+        style={{
+          display: "flex",
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+        }}
+      >
+        <Typography component={'h3'} variant="h3">BEST SELLER PRODUCTS</Typography>
+      </BestSeller>
+      <Brands />
     </div>
   );
 };

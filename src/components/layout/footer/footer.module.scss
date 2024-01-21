@@ -5,8 +5,12 @@
   max-width: 100%;
 }
 
+.product-page-footer{
+  // padding: 4rem 15rem;
+}
+
 .top {
-  padding: 1rem 8rem;
+  padding: 2rem 8rem;
   background-color: var(--primary-bg-section);
   @include flex-container(row, space-between, center);
   .logo {
@@ -15,12 +19,18 @@
       line-height: 32px;
       font-weight: 700;
       letter-spacing: 0.1px;
-       color: var(--primary-color);
+      color: var(--primary-color);
     }
   }
 
-  .socials{
-     @include flex-container(row, center, center);
+  .socials {
+    @include flex-container(row, center, center);
+    gap: 10px;
+
+    .ft-icons{
+      width: 18px;
+      height: 18px;
+    }
   }
 }
 
@@ -80,7 +90,7 @@
     }
   }
   ul {
-    @include flex-container(column, flex-start,flex-start);
+    @include flex-container(column, flex-start, flex-start);
     li {
       margin-top: 0.5rem;
       font-weight: 200;
@@ -97,29 +107,84 @@
   }
 
   & .subscribe {
-    @include flex-container(column, flex-start,flex-start);
+    @include flex-container(column, flex-start, flex-start);
     // max-width: 400px;
 
     .input {
-      width: 100%;
-      @include flex-container(row, center,center);
+      width: 321px;
+      height: 58px;
+      border: 1px solid #e6e6e6;
+      background-color: #e6e6e6;
+      border-radius: 6px;
+      @include flex-container(row, center, center);
       margin: 1rem 0;
-    }
+      & input {
+        height: 100%;
+        border: none;
+        padding: 0 0 0 10px;
+        flex: 2;
+        outline: none;
+        margin-right: 5px;
+        background-color: #e6e6e6;
 
+        &::placeholder {
+          font-size: 14px;
+          color: #737373;
+          font-weight: 400;
+        }
+      }
+
+      .button {
+        flex: 1;
+        display: block;
+        height: 100%;
+
+        @include flex-container(row, center, center);
+        background-color: var(--button-color-1);
+
+        & button {
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 28px;
+          border: none;
+          outline: none;
+          width: 100%;
+          color: #ffffff;
+        }
+      }
+    }
 
     p {
       color: var(--primary-color);
     }
+
+@media screen and (max-width: 1100px) {
+  margin: 2rem 0;
+}
   }
 }
 
-.rights{
+.rights {
   padding: 1rem 8rem;
   background-color: var(--primary-bg-section);
 }
 
 @media screen and (max-width: 1100px) {
+  .top {
+    gap: 10px;
+    @include flex-container(column, flex-start, flex-start);
+      padding:1rem 1rem;
+  }
+
   .bottom {
     grid-template-columns: 1fr;
+    padding: 1rem 1rem;
+  }
+
+  .rights {
+    text-align: center;
+    width: 100%;
+    font-weight: 700;
+    padding: 2rem 1rem;
   }
 }

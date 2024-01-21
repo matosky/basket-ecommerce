@@ -6,10 +6,11 @@ import { Card as MuiCard, SxProps, CardContent, CardMedia, Typography, Button, C
 interface ICard{
     children: React.ReactNode;
     sx?: SxProps,
+    key?: number;
 }
-export const Card = ({children, sx}:ICard) => {
+export const Card = ({children, sx, key}:ICard) => {
   return (
-    <MuiCard sx={sx}>
+    <MuiCard sx={sx} key={key}>
        {children}
     </MuiCard>
   );

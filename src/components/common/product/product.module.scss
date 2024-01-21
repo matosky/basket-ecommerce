@@ -1,13 +1,28 @@
+ .link{
+    text-decoration: none;
+    width: 100%;
+}
+
+.card-wrap {
+  width: 180px;
+  height: 300px;
 
 
-.card-wrap{
-    & h5{
-        font-size: 15px;
-        font-weight: 700;
-        line-height: 24px;
-    }
-    
-    .percentage{
-        color: #23856D;
-    }
+  & h5 {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  .percentage {
+    color: #23856d;
+  }
+
+  .img {
+    height: 180px;
+  }
+
+  @media screen and (max-width: 1100px) {
+    width: 100%;
+  }
 }

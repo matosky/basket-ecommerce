@@ -1,16 +1,17 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import { Header } from '@/components/layout/header/header'
-import { Hero } from '@/components/ui/hero/hero'
-import { BestSeller } from '@/components/ui/best-seller/best-seller'
-import { BestServices } from '@/components/ui/best-services/best-services'
-import { FeaturedPosts } from '@/components/ui/featured-posts/featured-posts'
-import { AboutUs } from '@/components/ui/about-us/about-us'
-import { Problems } from '@/components/ui/problems/problems'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
+import { Header } from "@/components/layout/header/header";
+import { Hero } from "@/components/ui/hero/hero";
+import { BestSeller } from "@/components/ui/best-seller/best-seller";
+import { BestServices } from "@/components/ui/best-services/best-services";
+import { FeaturedPosts } from "@/components/ui/featured-posts/featured-posts";
+import { AboutUs } from "@/components/ui/about-us/about-us";
+import { Problems } from "@/components/ui/problems/problems";
+import { Typography } from "@mui/material";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -23,12 +24,33 @@ export default function Home() {
       </Head>
       <>
         <Hero />
-        <BestSeller />
+        <BestSeller style={{width: '100%'}}>
+          <Typography component={'h4'} fontSize={"1.4rem"} textAlign={"center"} variant="h4">
+            Featured Products
+          </Typography>
+          <Typography
+            fontSize={"1.8rem"}
+            margin={"1rem"}
+            textAlign={"center"}
+            variant="h3"
+            component={'h3'}
+          >
+            BEST SELLER PRODUCTS
+          </Typography>
+          <Typography
+            fontSize={"1rem"}
+            component={"p"}
+            textAlign={"center"}
+            variant="body1"
+          >
+            Problems trying to resolve the conflict between
+          </Typography>
+        </BestSeller>
         <BestServices />
         <FeaturedPosts />
         <AboutUs />
         <Problems />
       </>
-  </>
-  )
+    </>
+  );
 }

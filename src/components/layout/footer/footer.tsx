@@ -4,6 +4,11 @@ import styles from "./footer.module.scss";
 import { Typography } from "@mui/material";
 import { Input } from "@/components/common/input/input";
 import { Button } from "@/components/common/button/button";
+import { useRouter } from "next/router";
+import Image from "next/image";
+import faceIcon from "../../../assets/svg/icons/ft-social-fb.svg";
+import instaIcon from "../../../assets/svg/icons/ft-social-insta.svg";
+import twitIcon from "../../../assets/svg/icons/ft-social-twit.svg";
 
 const links = [
   {
@@ -93,16 +98,48 @@ function Links({ links, title }: Ilinks) {
 }
 
 export const Footer = () => {
+  const router = useRouter();
+  const { asPath } = router;
+  const isProductPage = asPath.includes("products");
+
   return (
-    <footer className={styles["footer-wrap"]}>
-      <div className={styles["top"]}>
+    <footer
+      className={`${styles["footer-wrap"]} ${
+        isProductPage ? styles["product-page-footer"] : ""
+      }`}
+    >
+      <div
+        className={styles["top"]}
+        style={{
+          backgroundColor: isProductPage ? "#FFFFFF" : "#FAFAFA",
+          borderBottom: isProductPage ? "1px solid #E6E6E6" : "",
+        }}
+      >
         <div className={styles["logo"]}>
           <h3>Bandage</h3>
         </div>
         <div className={styles["socials"]}>
-          <span>icon</span>
-          <span>icon</span>
-          <span>icon</span>
+          <Image
+            className={styles["ft-icons"]}
+            src={faceIcon}
+            width={30}
+            height={30}
+            alt="icon"
+          />
+          <Image
+            className={styles["ft-icons"]}
+            src={instaIcon}
+            width={30}
+            height={30}
+            alt="icon"
+          />
+          <Image
+            className={styles["ft-icons"]}
+            src={twitIcon}
+            width={30}
+            height={30}
+            alt="icon"
+          />
         </div>
       </div>
 
@@ -124,12 +161,13 @@ export const Footer = () => {
         <div className={styles["subscribe"]}>
           <h5>Get In Touch</h5>
           <div className={styles["input"]}>
-            <Input type="text" placeholder="Email" />
-            <Button variant="contained" text="Subscribe" />
+            <input type="text" className="input" placeholder="Email" />
+            <div className={styles["button"]}>
+              <button>Search</button>
+            </div>
           </div>
           <p>Lore imp sum dolor Amit</p>
         </div>
-
       </div>
       <div className={styles["rights"]}>
         <Typography variant="body1">

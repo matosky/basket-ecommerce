@@ -7,7 +7,10 @@ import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 import styles from "./about-us.module.scss";
 import { Rating } from "@/components/common/rating/rating";
-import { Typography } from "@mui/material";
+import { Link, Typography } from "@mui/material";
+import { galleryData } from "./about-us-data";
+import Image from "next/image";
+
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
@@ -18,41 +21,52 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export const AboutUs = () => {
   return (
-    <section className={styles['about-wrap']}>
-        <div className={styles["testimonial"]}>
-          <Typography gutterBottom variant="h4" component="div">
-            Lizard
-          </Typography>
+    <section className={styles["about-wrap"]}>
+      <div className={styles["testimonial"]}>
+        <Typography gutterBottom variant="h3">
+          What they say about us
+        </Typography>
 
-          <Stack direction="row" spacing={2}>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-          </Stack>
-          <Rating />
-          <Typography gutterBottom variant="body1" component="div">
-            Slate helps you see how many more days you need to work to reach
-            your financial goal.
-          </Typography>
-          <Typography gutterBottom variant="h5" component="div">
-            Regina Milner
-          </Typography>
-          <Typography gutterBottom variant="h6" component="div">
-            Designer
-          </Typography>
-        </div>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          <Grid item xs={6}>
-            <Item>1</Item>
+        <Stack direction="row" spacing={6}>
+          <Avatar
+            alt="Remy Sharp"
+            src={galleryData[4].img}
+            sx={{ width: 100, height: 100 }}
+          />
+        </Stack>
+        <Rating />
+        <Typography gutterBottom variant="body1" component="p">
+          Slate helps you see how many more days you need to work to reach your
+          financial goal.
+        </Typography>
+        <Link
+          component="a"
+          underline="hover"
+          color="inherit"
+          variant="h5"
+          gutterBottom
+        >
+          Regina Milner
+        </Link>
+        <Typography gutterBottom variant="h6" component="div">
+          Designer
+        </Typography>
+      </div>
+      <Grid  sx={{ width: "350px", height: "350px",}} container spacing={0}>
+        {galleryData.map((pc, i) => (
+          <Grid item xs={4} key={i}>
+            <Item sx={{ width: "100%", height: "100%" }}>
+              <Image
+                src={pc.img}
+                width={100}
+                height={100}
+                alt="about"
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+            </Item>
           </Grid>
-          <Grid item xs={6}>
-            <Item>2</Item>
-          </Grid>
-          <Grid item xs={6}>
-            <Item>3</Item>
-          </Grid>
-          <Grid item xs={6}>
-            <Item>4</Item>
-          </Grid>
-        </Grid>
+        ))}
+      </Grid>
     </section>
   );
 };

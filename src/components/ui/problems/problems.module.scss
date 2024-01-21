@@ -1,0 +1,58 @@
+@import "../../../styles/base/mixins.scss";
+
+.problems-wrap{
+    width: 100%;
+    max-width: 100%;
+    margin: 40px 0;
+    padding: 4rem 0;
+    background-image: url('/images/problems/bg.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    position: relative;
+    @include flex-container(row, center, center);
+
+
+
+    .content-box{
+        max-width: 100%;
+        @include flex-container(column, center, center);
+         gap: 20px;
+        & h6{
+            font-size: 1rem;
+            line-height: 24px;
+            font-weight: 700;
+            color: var(--button-color-1);
+        }
+
+        & h2{
+            font-size: 2rem;
+            line-height: 50px;
+            text-align: center;
+            font-weight: 700;
+            color: var(--primary-color);
+            max-width: 70%;
+            @media screen and (max-width: 1100px){
+                max-width: 100%;
+            }
+        }
+
+        & p{
+            font-size: 1rem;
+            line-height: 20px;
+            text-align: center;
+            font-weight: 400;
+            color: var(--secondary-color);
+            max-width: 70%;
+        }
+
+        & h3{
+            font-size: 1.4;
+            line-height: 20px;
+            text-align: center;
+            font-weight: 400;
+            color: #23856D;
+            max-width: 70%;
+        }
+    }
+}

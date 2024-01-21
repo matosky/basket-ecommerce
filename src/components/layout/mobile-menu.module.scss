@@ -1,0 +1,15 @@
+@import "../../../styles/base/mixins.scss";
+
+
+.mobile-wrap{
+  @include flex-container(column, center, center);
+
+
+  & ul{
+     @include flex-container(column, center, center);
+  }
+
+  .actions{
+    @include flex-container(column, center, center);
+  }
+}

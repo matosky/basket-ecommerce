@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import Typography from "@mui/material/Typography";
 import styles from "./best-seller.module.scss"; // Adjust the path based on your CSS module file
 import { Button } from "@/components/common/button/button";
 import { getProducts } from "@/network/products";
-import { Product} from "@/components/common/product/product";
+import { Product } from "@/components/common/product/product";
 import { ProductList } from "@/components/common/product-list/product-list";
+import { useRouter } from "next/router";
 
 export interface ProductResponse {
   id: number;
@@ -19,11 +20,20 @@ export interface ProductResponse {
   stock: number;
   thumbnail: string;
 }
-export const BestSeller = () => {
+
+interface BestSellerProps {
+  children: ReactNode;
+  style: React.CSSProperties;
+}
+export const BestSeller = ({ children, style }: BestSellerProps) => {
   const [products, setProducts] = useState<ProductResponse[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [skip, setSkip] = useState(0);
+  const router = useRouter();
+  const { asPath } = router;
+
+  const isProductPage = asPath.includes("products");
 
   const fetchInitialProducts = async () => {
     try {
@@ -54,34 +64,28 @@ export const BestSeller = () => {
 
   useEffect(() => {
     fetchInitialProducts();
-  }, []); 
+  }, []);
   return (
-    <section className={styles["best-seller-wrap"]}>
-      <div>
-        <Typography fontSize={"1.4rem"} textAlign={"center"} variant="h2">
-          Featured Products
-        </Typography>
-        <Typography
-          fontSize={"1.8rem"}
-          margin={"1rem"}
-          textAlign={"center"}
-          variant="h3"
-        >
-          BEST SELLER PRODUCTS
-        </Typography>
-        <Typography fontSize={"1rem"} textAlign={"center"} variant="body1">
-          Problems trying to resolve the conflict between
-        </Typography>
+    <section
+      className={styles["best-seller-wrap"]}
+      style={{
+        backgroundColor: isProductPage ? "#FAFAFA" : "#FFFFFF",
+      }}
+    >
+      <div className={styles["heading-wrap"]} style={style}>
+        {children}
       </div>
-      {products && <ProductList products={products}/>}
-      <div className={styles["button"]}>
-        <Button
-          loading={loading}
-          variant="outlined"
-          text="LOAD MORE PRODUCTS"
-          onClick={fetchMoreProducts}
-        />
-      </div>
+      {products && <ProductList products={products} />}
+      {!asPath.includes("products") && (
+        <div className={styles["button"]}>
+          <Button
+            loading={loading}
+            variant="outlined"
+            text="LOAD MORE PRODUCTS"
+            onClick={fetchMoreProducts}
+          />
+        </div>
+      )}
     </section>
   );
 };

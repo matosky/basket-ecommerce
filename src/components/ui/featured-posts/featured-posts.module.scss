@@ -1,8 +1,55 @@
-@import '../../../styles/base/mixins.scss';
+@import "../../../styles/base/mixins.scss";
 
+.featured-wrap {
+  width: 100%;
+  padding: 4rem 6rem;
+  background-color: var(--primary-bg);
+  @include flex-container(column, center, center);
+  @media screen and (max-width: 1100px) {
+    padding: 4rem 1rem;
+  }
+  & a {
+    text-decoration: none;
+  }
 
-.featured-wrap{
-    width: 100%;
-    @include flex-container(column, center, center)
+  & h3 {
+    @include responsive-subtitle;
+  }
+
+  & h4 {
+    @include responsive-title;
+  }
+
+  & p {
+    @include responsive-paragraph;
+  }
 }
 
+.items {
+  margin: 4rem 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  @media screen and (max-width: 1100px) {
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .display-card {
+    width: 320px;
+    height: 600px;
+    @media screen and (max-width: 1100px) {
+      width: 100%;
+    }
+
+    .card-ft {
+      @include flex-container(column, flex-start, flex-start);
+      gap: 20px;
+      & img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
