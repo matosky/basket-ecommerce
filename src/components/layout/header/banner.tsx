@@ -1,8 +1,4 @@
 import styles from "./banner.module.scss";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import phoneIcon from "../../../assets/svg/icons/phone.svg";
 import msg from "../../../assets/svg/icons/msg.svg";
 import insta from "../../../assets/svg/icons/insta.svg";
@@ -16,7 +12,6 @@ export const Banner = () => {
   const router = useRouter();
   const { asPath } = router;
   const isProductPage = asPath.includes("products");
-  console.log(isProductPage);
   return (
     <div
       className={
@@ -42,7 +37,7 @@ export const Banner = () => {
           </div>
           <div className={styles["home-right"]}>
             <div className={styles["home-socials"]}>
-            <span>Follow Us :</span>
+              <span>Follow Us :</span>
               <Image
                 className={styles["home-icon"]}
                 src={insta}
@@ -93,7 +88,7 @@ export const Banner = () => {
           </div>
           <div className={styles["right"]}>
             <div className={styles["socials"]}>
-            <span>Follow Us :</span>
+              <span>Follow Us :</span>
               <Image
                 className={styles["icon"]}
                 src={insta}

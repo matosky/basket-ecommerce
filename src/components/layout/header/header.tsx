@@ -82,7 +82,7 @@ export const Header = () => {
           )}
           {isMobile && (
             <Box sx={{ display: "flex" }}>
-              {!isProductPage && (
+              {/* {!isProductPage && ( */}
                 <Box sx={{ display: "flex", gap: "10px", marginRight: "20px" }}>
                   <Image
                     className={styles["mobile-header-icons"]}
@@ -105,7 +105,7 @@ export const Header = () => {
                     </div>
                   )}
                 </Box>
-              )}
+              {/* )} */}
               <Image
                onClick={()=>handleMobileMenu()}
                 className={styles["mobile-header-icons"]}

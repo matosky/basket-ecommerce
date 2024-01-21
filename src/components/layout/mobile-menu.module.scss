@@ -8,7 +8,7 @@
   border: 1px solid #E6E6E6;  
   padding: 1rem 0;
   max-width: 100%;
-  z-index: 999;
+  z-index: 10;
   @include flex-container(column, flex-end, right);
 
   & ul{
