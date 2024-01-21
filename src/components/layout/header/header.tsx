@@ -18,6 +18,7 @@ import { CartModal } from "@/components/common/modals/cart-modal/cart-modal";
 import { WishListModal } from "@/components/common/modals/wish-list-modal/wish-list-modal";
 import { useMediaQuery } from "react-responsive";
 import { Box } from "@mui/material";
+import { MobileMenu } from "../mobile-menu";
 
 export const Header = () => {
   const router = useRouter();
@@ -29,8 +30,13 @@ export const Header = () => {
   const [isClient, setIsClient] = useState(false);
   const [isCartPopupOpen, setIsCartPopupOpen] = useState(false);
   const [isWishPopupOpen, setIsWishPopupOpen] = useState(false);
-
+  const [mobileMenu, setIsMobileMenu] = useState(false);
+   
   const isProductPage = asPath.includes("products");
+
+  const handleMobileMenu = ()=>{
+    setIsMobileMenu((prev)=>!prev)
+  }
 
   const handleOpenCartPopup = () => {
     setIsCartPopupOpen(true);
@@ -101,6 +107,7 @@ export const Header = () => {
                 </Box>
               )}
               <Image
+               onClick={()=>handleMobileMenu()}
                 className={styles["mobile-header-icons"]}
                 src={menuIcon}
                 width={30}
@@ -140,6 +147,7 @@ export const Header = () => {
           )}
         </div>
       </div>
+      {mobileMenu && <MobileMenu />}
       <CartModal open={isCartPopupOpen} onClose={handleCloseCartPopup} />
       <WishListModal open={isWishPopupOpen} onClose={handleCloseWishPopup} />
     </header>

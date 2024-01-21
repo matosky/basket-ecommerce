@@ -1,9 +1,9 @@
 import Image from "next/image";
 import styles from "./mobile-menu.module.scss";
-import cartIcon from "../../../assets/svg/icons/cart.svg";
-import searchIcon from "../../../assets/svg/icons/search.svg";
-import wishIcon from "../../../assets/svg/icons/wish.svg";
-import userIcon from "../../../assets/svg/icons/user.svg";
+import cartIcon from "../../assets/svg/icons/cart-link.svg";
+import searchIcon from "../../assets/svg/icons/search.svg";
+import wishIcon from "../../assets/svg/icons/wish.svg";
+import userIcon from "../../assets/svg/icons/user.svg";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import Link from "next/link";
@@ -52,7 +52,7 @@ export const MobileMenu = () => {
                 {links.map((l, i) => (
                     <li key={i}>
                         <span>{l.label}</span>
-                        {i === 1 && <span>icon</span>}
+                        {/* {i === 1 && <span>icon</span>} */}
                     </li>
                 ))}
             </ul>

@@ -1,15 +1,82 @@
-@import "../../../styles/base/mixins.scss";
+@import "../../styles/base/mixins.scss";
 
 
 .mobile-wrap{
-  @include flex-container(column, center, center);
-
+  position: relative;
+  width: 100%;
+  background-color: var(--primary-bg);
+  border: 1px solid #E6E6E6;  
+  padding: 1rem 0;
+  max-width: 100%;
+  z-index: 999;
+  @include flex-container(column, flex-end, right);
 
   & ul{
+    width: fit-content;
+    margin: 0 auto;
      @include flex-container(column, center, center);
+
+    
   }
 
+  .links {
+    gap: 10px;
+    @include flex-container(column, space-between, center);
+    & li {
+      color: var(--link-primary);
+      font-size: 20px;
+      font-weight: 400;
+      cursor: pointer;
+      line-height: 28px;
+    }
+  }
+
+ 
+
+  .account {
+    width: fit-content;
+    margin: 0.5rem 0;
+    @include flex-container(row, baseline, baseline);
+    gap: 3px;
+    & img {
+      width: 25px;
+      height: 25px;
+    }
+    & span {
+      color: #23A6F0;
+      font-size: 20px;
+      cursor: pointer;
+      line-height: 24px;
+      font-weight: 400;
+    }
+  }
+
+  
+
   .actions{
+    width: fit-content;
+    margin: 0 auto;
     @include flex-container(column, center, center);
+
+    @include flex-container(column, space-between, center);
+    gap: 10px;
+    .icon {
+      cursor: pointer;
+      @include flex-container(column, space-between, center);
+      & img {
+        width: 25px;
+        height: 25px;
+      }
+      span {
+        color: #23a6f0;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 700;
+      }
+    }
   }
 }
+
+
+
+
