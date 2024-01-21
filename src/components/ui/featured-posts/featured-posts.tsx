@@ -30,7 +30,7 @@ export const FeaturedPosts = () => {
       </div>
       <div className={styles["items"]}>
         {featuredData.map((ft, i) => (
-          <Card className={styles["display-card"]}>
+          <Card key={i} className={styles["display-card"]}>
             <CardActionArea>
               <CardMedia
                 component="img"

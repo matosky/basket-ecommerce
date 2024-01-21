@@ -35,7 +35,7 @@ const ItemPage = () => {
 
   useEffect(() => {
     fetchInitialProducts();
-  }, []);
+  }, [fetchInitialProducts]);
 
   // Parse id into a number before using it for comparison
   const singleProduct = products?.find(

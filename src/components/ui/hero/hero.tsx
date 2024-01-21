@@ -30,7 +30,7 @@ export const Hero = () => {
     <section className={styles["hero-container"]}>
       <div className={styles["hero-content"]}>
         {heroData.map((info, i) => (
-          <div className={`${styles["box"]} ${styles[`box${i + 1}`]}`}>
+          <div key={i} className={`${styles["box"]} ${styles[`box${i + 1}`]}`}>
             <div className={styles['content']}>
               <Typography fontSize={"14px"}  variant="h6">
                 5 Items
