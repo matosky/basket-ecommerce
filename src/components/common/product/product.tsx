@@ -10,6 +10,7 @@ import {
 import styles from "./product.module.scss";
 import Link from "next/link";
 
+
 interface ProductProps {
   product: {
     id: number;
@@ -29,8 +30,8 @@ interface ProductProps {
 export const Product: React.FC<ProductProps> = ({ product }) => {
   const { id } = product;
   return (
-    <Link className={styles["link"]} href={`/products/${id}`}>
-      <Card className={styles["card-wrap"]} key={product.id}>
+    <Link key={product.id} className={styles["link"]} href={`/products/${id}`}>
+      <Card className={styles["card-wrap"]}>
         <CardActionArea>
           <CardMedia
             component="img"

@@ -86,7 +86,7 @@ export const BestSeller = ({ children, style }: BestSellerProps) => {
         {children}
       </div>
       {products && <ProductList products={products} />}
-      {!asPath.includes("products") && products.length > 0 && (
+      {!asPath.includes("products") && products.length!==100 && (
         <div className={styles["button"]}>
           <Button
             loading={loading}

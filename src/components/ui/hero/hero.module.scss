@@ -24,6 +24,7 @@
     width: 90%;
     margin: 0 auto;
     height: 100%;
+    gap: 20px;
     @include flex-container(column, center, center);
   }
 }
@@ -70,7 +71,7 @@
   background-position: center;
   @media screen and (max-width: 1100px) {
     width: 100%;
-    flex: 4;
+    flex:4;
   }
 }
 
@@ -94,6 +95,6 @@
   background-position: center;
   @media screen and (max-width: 1100px) {
     width: 100%;
-    flex: 3;
+    flex: 4;
   }
 }
