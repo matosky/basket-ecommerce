@@ -2,7 +2,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 import { updateLocalStorage, getLocalStorageData } from '@/utils/store'; 
-
 interface CartItem {
   id: number;
   thumbnail: string;

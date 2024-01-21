@@ -91,6 +91,19 @@ export const Header = () => {
                     height={30}
                     alt="icon"
                   />
+                    {isClient && (
+                    <div>
+                      <Image
+                        onClick={() => handleOpenWishPopup()}
+                        className={styles["mobile-header-icons"]}
+                        src={wishIcon}
+                        width={30}
+                        height={30}
+                        alt="icon"
+                      />
+                      {wishItems && <span>{wishItems.length}</span>}
+                    </div>
+                  )}
                   {isClient && (
                     <div>
                       <Image

@@ -13,7 +13,8 @@ import AppProvider from "@/store/provider";
 export default function App({ Component, pageProps }: AppProps) {
   const [isClient, setIsClient] = useState(false);
 
-  // Use useEffect to set isClient to true after the initial render
+  // Use useEffect to set isClient to true after the initial 
+  // render to prevent server side hydratiion Error
   useEffect(() => {
     setIsClient(true);
   }, []);

@@ -50,11 +50,7 @@ export const BestServices = () => {
             <CardActionArea
                className={styles['card']}
                   sx={{
-                    width: "250px",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
+                    
                   }}
             >
                <Image src={info.img} width={72} height={72} alt="display" />
