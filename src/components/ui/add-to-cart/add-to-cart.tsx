@@ -40,6 +40,8 @@ export const AddToCart = ({ product }: ProductResponse) => {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const dispatch = useDispatch();
 
+  console.log({product})
+
   const handleAddToCart = () => {
     const cartItem: CartItem = {
       id: product.id,
