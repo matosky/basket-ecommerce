@@ -35,7 +35,7 @@ const ItemPage = () => {
 
   useEffect(() => {
     fetchInitialProduct();
-  }, [fetchInitialProduct]);
+  }, []);
 
  
   return (
