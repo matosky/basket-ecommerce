@@ -20,9 +20,10 @@ const ItemPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [skip, setSkip] = useState(0);
-  console.log({id})
+  console.log({ id });
 
   const fetchInitialProduct = async () => {
+    setLoading(true);
     try {
       const product = await getProduct(id as string);
       setProduct(product);
@@ -35,12 +36,25 @@ const ItemPage = () => {
 
   useEffect(() => {
     fetchInitialProduct();
-  }, []);
+  }, [id]);
 
- 
   return (
     <div>
-      {product && <AddToCart product={product} />}
+      {loading ? (
+        <Box
+          sx={{
+            width: "100%",
+            height: "300px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <h1>Loading...</h1>
+        </Box>
+      ) : (
+        product && <AddToCart product={product} />
+      )}
       <ProductDescription />
       <BestSeller
         style={{
@@ -49,7 +63,9 @@ const ItemPage = () => {
           alignItems: "flex-start",
         }}
       >
-        <Typography component={'h3'} variant="h3">BEST SELLER PRODUCTS</Typography>
+        <Typography component={"h3"} variant="h3">
+          BEST SELLER PRODUCTS
+        </Typography>
       </BestSeller>
       <Brands />
     </div>
